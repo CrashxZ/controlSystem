@@ -43,7 +43,7 @@ class navigate(object):
                 # start navigation
                 #TODO: Delay 10 mins
                 #TODO: ARM AND SEND GPS COORDINATES TO THE PIXHAWK
-                os.system("")
+                os.system("sleep 600;./navigate.sh "+ self.target.lattitude +" "+self.target.longitude)
 
     def returnTarget(self):
         while not rospy.is_shutdown():

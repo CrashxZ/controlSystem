@@ -14,8 +14,6 @@ class terminate(object):
         self.probabilityThreshold = 0.80
         # Subscriber to get Target Position
         self._hunter = rospy.Subscriber('/drone_hunter_topic', String, self.get_target_location)
-        # Navigation
-        self.navigator = rospy.Publisher('/navigator', String)
         self.terminateIt()
 
     # Subscriber callback for Target Position Information
@@ -35,7 +33,6 @@ class terminate(object):
             if (self.target != "" and self.target["prob"] > self.probabilityThreshlold):
                 # terminated
                 os.system("./kill.sh")
-                self.navigator.publish("1")
                 break
 
 
