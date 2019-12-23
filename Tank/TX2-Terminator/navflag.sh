@@ -8,4 +8,4 @@ export ROS_MASTER_IP=192.168.188.100
 
 cd $HOME/nav
 source devel/setup.bash
-rosrun nav navflag.py
+rosrun nav start_nav.py

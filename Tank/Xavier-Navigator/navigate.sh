@@ -9,6 +9,7 @@ export ROS_MASTER_IP=192.168.188.100
 
 lattitude=$1
 longitude=$2
-
+#set home
+rosrun mavros mavcmd sethome
 #send global position to pixhawk to navigate
 rosservice call /mavros/mission/push "start_index:0 waypoints:- {frame: 0, command: 0, is_current: false, autocontinue: false, param1: 0.0, param2: 0.0, param3: 0.0, param4:0.0 , x_lat: $lattitude, y_long : $longitude, z_alt: 0.1"

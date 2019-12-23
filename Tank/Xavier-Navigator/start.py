@@ -51,7 +51,7 @@ class navigate(object):
                 rospy.loginfo("Returning")
                 # return navigation
                 #TODO: ARM AND SEND GPS COORDINATES TO THE PIXHAWK
-                os.system("")
+                os.system("rosrun mavros mavwp goto 0")
 
 
 if __name__ == "__main__":
